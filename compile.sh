@@ -1,5 +1,5 @@
 #!/bin/bash
-echo " Hello, Thankyou for using this script "
+echo " Hello, Thank you for using this script "
 echo " You can easily build orange fox with this script for your Xiaomi Device "
 echo " First lets setup the environment "
 echo " Press Enter to Start "
@@ -77,6 +77,6 @@ mka recoveryimage
 
 echo "_________________________________________________________________________________________"
 
-echo " Thankyou for using my Script " 
+echo " Thank you for using my Script "
 echo " Do follow my Github Account for more scripts : https://github.com/Sammy970 "
 echo " Would love to help you "
