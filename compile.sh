@@ -28,15 +28,18 @@ clear
 
 echo "_________________________________________________________________________________________"
 
-echo " Now tell me your Xiaomi device codename "
+echo " Now tell me your device codename "
 read code 
 
+echo " Now tell me your device vendor "
+read vendor
 echo " Now Give me your trees github link "
 read trees
 
+
 cd
 cd scripts/Orangefox
-git clone $trees device/xiaomi/$code
+git clone $trees device/$vendor/$code
 
 echo "_________________________________________________________________________________________"
 
@@ -52,9 +55,17 @@ read main
 
 echo "_________________________________________________________________________________________"
 
-echo " Now tell me the codename for your device "
-read code
 
+# Common variables for OF building scripts
+# For building with minimal TWRP
+export ALLOW_MISSING_DEPENDENCIES=true
+export TW_DEFAULT_LANGUAGE="en"
+# To use ccache to speed up building
+export USE_CCACHE="1"
+# Enforced by R11 rules
+export FOX_R11="1"
+export FOX_ADVANCED_SECURITY="1"
+export FOX_RESET_SETTINGS="1"
 # Import OrangeFox build variables
 source configs/"${code}"_ofconfig
 
@@ -62,7 +73,7 @@ clear
 echo "_________________________________________________________________________________________"
 
 echo " Lets Lunch it all together 😉😋 "
-lunch omni_$code
+lunch omni_$"{code}"
 
 # If lunch command fail, there is no need to continue building
 if [ "$?" != "0" ]; then
