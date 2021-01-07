@@ -13,3 +13,16 @@ If you have any Doubts regarding this Script, you can ask me on my telegram @p_g
 A specal thanks to @Sammy970 https://t.me/Sammy970
 
 _______________________________________
+
+Recomended Device Trees :
+
+https://github.com/mauronofrio/android_device_oneplus_fajita_TWRP Edit BoardConfig.mk
+
+https://github.com/TeamWin/android_device_oneplus_cheeseburger_dumpling Edit BoardConfig.mk
+
+https://github.com/Ryukendo9/android_device_xiaomi_jasmine_sprout-OFRP @Ryukendo9
+____________________________________
+Edit BoardConfig.mk
+```
+TW_INCLUDE_REPACKTOOLS := false
+```
