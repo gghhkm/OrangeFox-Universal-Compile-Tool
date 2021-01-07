@@ -1,6 +1,21 @@
 #!/bin/bash
+echo "
+░█████╗░░█████╗░███╗░░░███╗██████╗░██╗██╗░░░░░███████╗....░██╗░░░░░░░██╗██╗████████╗██╗░░██╗
+██╔══██╗██╔══██╗████╗░████║██╔══██╗██║██║░░░░░██╔════╝....░██║░░██╗░░██║██║╚══██╔══╝██║░░██║
+██║░░╚═╝██║░░██║██╔████╔██║██████╔╝██║██║░░░░░█████╗░░....░╚██╗████╗██╔╝██║░░░██║░░░███████║
+██║░░██╗██║░░██║██║╚██╔╝██║██╔═══╝░██║██║░░░░░██╔══╝░░....░░████╔═████║░██║░░░██║░░░██╔══██║
+╚█████╔╝╚█████╔╝██║░╚═╝░██║██║░░░░░██║███████╗███████╗....░░╚██╔╝░╚██╔╝░██║░░░██║░░░██║░░██║
+░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚══════╝....░░░╚═╝░░░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝
+
+██████╗░░█████╗░░██╗░░░░░░░██╗███████╗██████╗░..██╗
+██╔══██╗██╔══██╗░██║░░██╗░░██║██╔════╝██╔══██╗..██║
+██████╔╝██║░░██║░╚██╗████╗██╔╝█████╗░░██████╔╝..██║
+██╔═══╝░██║░░██║░░████╔═████║░██╔══╝░░██╔══██╗..╚═╝
+██║░░░░░╚█████╔╝░░╚██╔╝░╚██╔╝░███████╗██║░░██║...██╗
+╚═╝░░░░░░╚════╝░░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░╚═╝...╚═╝ "
 echo " Hello, Thank you for using this script "
-echo " You can easily build orange fox with this script for your Xiaomi Device "
+echo " You can easily build orange fox with this script for your Device "
+sleep 2
 echo " First lets setup the environment "
 echo " Press Enter to Start "
 read -r Ans
@@ -20,7 +35,7 @@ cd scripts || return
 mkdir Orangefox
 cd Orangefox || return
 repo init --depth=1 -q -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
-repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
+repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j"$(nproc --all)"
 
 echo "_________________________________________________________________________________________"
 
@@ -55,9 +70,10 @@ read -r main
 
 echo "_________________________________________________________________________________________"
 
+#Maintainer
+export OF_MAINTAINER="$main"
 
-# Common variables for OF building scripts
-# For building with minimal TWRP
+## Universal variables for building
 export ALLOW_MISSING_DEPENDENCIES=true
 export TW_DEFAULT_LANGUAGE="en"
 # To use ccache to speed up building
@@ -68,7 +84,9 @@ export FOX_ADVANCED_SECURITY="1"
 export FOX_RESET_SETTINGS="1"
 # Import OrangeFox build variables
 source configs/"${code}"_ofconfig
-
+echo " Now tell me the version "
+read -r version
+export FOX_VERSION="${version}"
 clear
 echo "_________________________________________________________________________________________"
 
@@ -89,6 +107,19 @@ mka recoveryimage
 
 echo "_________________________________________________________________________________________"
 
-echo " Thank you for using my Script "
+echo " Thank you for using our Script "
+sleep 3
+clear
+echo " credits :  "
 echo " Do follow my Github Account for more scripts : https://github.com/Sammy970 "
-echo " Would love to help you "
+echo " Do follow me too : https://github.com/gghhkm "
+echo " Would love to help you - Sammy970"
+echo " All the best - gghhkm "
+sleep 4
+echo "
+██████╗░░█████╗░███╗░░██╗███████╗...██╗██╗
+██╔══██╗██╔══██╗████╗░██║██╔════╝...██║██║
+██║░░██║██║░░██║██╔██╗██║█████╗░░...██║██║
+██║░░██║██║░░██║██║╚████║██╔══╝░░...╚═╝╚═╝
+██████╔╝╚█████╔╝██║░╚███║███████╗....██╗██╗
+╚═════╝░░╚════╝░╚═╝░░╚══╝╚══════╝....╚═╝╚═╝ "
