@@ -64,8 +64,6 @@ read -r main
 clear
 
 #-------------------------------------
-cd || return
-cd scripts/Orangefox || return
 git clone "${trees}" device/"${vendor}"/"${code}"
 clear
 
