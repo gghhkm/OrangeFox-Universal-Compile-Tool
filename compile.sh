@@ -42,9 +42,8 @@ read -r Ans
 cd scripts || return
 mkdir Orangefox
 cd Orangefox || return
-repo init --depth=1 -q -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
-repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j"$(nproc --all)"
-
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo sync -j8 --force-sync
 #---------------
 
 clear
