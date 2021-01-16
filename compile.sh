@@ -78,21 +78,6 @@ clear
 echo " Now lets start building the environment "
 source build/envsetup.sh
 
-#-------------------------
-
-#Maintainer
-export OF_MAINTAINER="${main}"
-## Universal variables for building
-export ALLOW_MISSING_DEPENDENCIES=true
-export TW_DEFAULT_LANGUAGE="en"
-export USE_CCACHE="1"
-export FOX_R11="1"
-export FOX_ADVANCED_SECURITY="1"
-export FOX_RESET_SETTINGS="1"
-
-echo " Now tell me the version "
-read -r version
-export FOX_VERSION="${version}"
 
 clear
 #-------------------------
@@ -121,7 +106,6 @@ echo " Now that You've saved you're config fle, lets build Ofox
 Press enter when ready "
 read -r enter
 
-source ~/OrangeFox-Universal-Compile-Tool/configs/"${code}"_ofconfig
 fi
 
 
@@ -130,6 +114,22 @@ echo "__________________________________________________________________________
 
 echo " Lets Launch it together 😉😋 "
 lunch omni_"${code}"-eng
+source ~/OrangeFox-Universal-Compile-Tool/configs/"${code}"_ofconfig
+#-------------------------
+
+#Maintainer
+export OF_MAINTAINER="${main}"
+## Universal variables for building
+export ALLOW_MISSING_DEPENDENCIES=true
+export TW_DEFAULT_LANGUAGE="en"
+export USE_CCACHE="1"
+export FOX_R11="1"
+export FOX_ADVANCED_SECURITY="1"
+export FOX_RESET_SETTINGS="1"
+
+echo " Now tell me the version "
+read -r version
+export FOX_VERSION="${version}"
 
 # If lunch command fail, there is no need to continue building
 if [ "$?" != "0" ]; then
@@ -146,7 +146,7 @@ Lets Start Building "
 mka recoveryimage
 
 #---------
-clear
+
 
 echo " credits :
 Do follow my Github Account for more scripts : https://github.com/Sammy970
