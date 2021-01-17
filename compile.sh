@@ -21,7 +21,7 @@ echo "
 ╚═╝......╚════╝....╚═╝...╚═╝..╚══════╝╚═╝..╚═╝..╚═╝. "
 echo " Hello, Thank you for using this script
 You can easily build orange fox with this script for your Device "
-sleep 5
+sleep 3
 echo " First lets setup the environment
 Press Enter to Start "
 read -r Ans
@@ -36,9 +36,8 @@ sudo pacman -S git aria2
 clear
 #---------------
 
-echo " Now lets sync the Latest Orange Fox Sources [ Latest 9.0 ]
-Press Enter to Start "
-read -r Ans
+echo "  synching the Latest Orange Fox Sources [ Latest 9.0 ] "
+
 cd scripts || return
 mkdir Orangefox
 cd Orangefox || return
@@ -91,6 +90,7 @@ read -r Ans3
 
 if [ "${Ans3}" = 1 ]
 then
+echo "-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"
 clear
 #-----
 elif [ "${Ans3}" = 2 ]
@@ -110,8 +110,7 @@ fi
 clear
 echo "_________________________________________________________________________________________"
 
-echo " Lets Launch it together 😉😋 "
-lunch omni_"${code}"-eng
+
 source ~/OrangeFox-Universal-Compile-Tool/configs/"${code}"_ofconfig
 #-------------------------
 
@@ -129,6 +128,8 @@ echo " Now tell me the version "
 read -r version
 export FOX_VERSION="${version}"
 
+echo " Lets Launch it together 😉😋 "
+lunch omni_"${code}"-eng
 # If lunch command fail, there is no need to continue building
 if [ "$?" != "0" ]; then
   echo "launch failed :/"
@@ -151,7 +152,7 @@ Do follow my Github Account for more scripts : https://github.com/Sammy970
 Do follow me too : https://github.com/gghhkm
 Would love to help you - Sammy970
 All the best - gghhkm "
-sleep 5
+sleep 3
 echo "
 ██████╗..█████╗.███╗..██╗███████╗..██╗.██╗...
 ██╔══██╗██╔══██╗████╗.██║██╔════╝..██║.██║....
