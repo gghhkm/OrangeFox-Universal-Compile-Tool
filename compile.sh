@@ -47,9 +47,10 @@ sudo pacman -S git aria2 python nano
 echo -n -e $Y'              •'$N; sleep 0.3;
 echo -n -e $Y'•'$N; sleep 0.4;
 {
-cd || return
-git clone https://github.com/akhilnarang/scripts
-bash scripts/setup/android_build_env.sh
+git clone https://gitlab.com/OrangeFox/misc/scripts
+cd scripts
+sudo bash setup/android_build_env.sh
+sudo bash setup/install_android_sdk.sh
 }&> /dev/null 
 echo -n -e $Y'•'$N
 sleep 2
@@ -66,6 +67,10 @@ mkdir Orangefox
 cd Orangefox || return
 repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
 repo sync -j8 --force-sync
+
+mkdir ~/OrangeFox_10
+cd ~/OrangeFox_10 || return
+rsync rsync://sources.orangefox.download/sources/fox_10.0 . --progress -a
 }&> /dev/null
 echo -n -e $Y'•'$N
 sleep 2
