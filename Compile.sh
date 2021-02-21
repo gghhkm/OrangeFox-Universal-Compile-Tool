@@ -83,38 +83,36 @@ echo -e $Y " Options
 
 read -r Ans4
 clear
-if [ "${Ans4}" = 1 ]
-then
+if [[ "${Ans4}" = 1 ]]; then
 	fox=OrangeFox
 	echo -e $C "synching the Latest Orange Fox Sources" $N; sleep 0.1;
 	echo -n -e $R'              •'$N; sleep 0.3;
 	echo -n -e $Y'•'$N; sleep 0.4;
-{
+	{
 	cd ~/scripts || return
 	mkdir Orangefox
 	cd Orangefox || return
 	repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
 	repo sync -j8 --force-sync
-}&> /dev/null
-echo -n -e $G'•'$N
-sleep 2
-clear
-cd ~/scripts/Orangefox || return
-
-elif [ "${Ans4}" = 2 ]
-then
+	}&> /dev/null
+	echo -n -e $G'•'$N
+	sleep 2
+	clear
+	cd ~/scripts/Orangefox || return
+elif [[ "${Ans4}" = 2 ]]; then
 	fox=OrangeFox_10
 	echo -e $C "synching the Latest Orange Fox Sources" $N; sleep 0.1;
 	echo -n -e $R'              •'$N; sleep 0.3;
 	echo -n -e $Y'•'$N; sleep 0.4;
-{
+	{
  	mkdir ~/OrangeFox_10
 	cd ~/OrangeFox_10
-	rsync rsync://sources.orangefox.download/sources/fox_10.0 . --progress -a}&> /dev/null
-echo -n -e $G'•'$N
-sleep 2
-clear
+	rsync rsync://sources.orangefox.download/sources/fox_10.0 . --progress -a
+	}&> /dev/null
+	echo -n -e $G'•'$
+	sleep 2
 fi
+clear
 
 # Questions
 # ----------------------------------------
@@ -167,11 +165,9 @@ echo -e $Y " Options
  -------------------------------------------------------------------------------------------------------------- " $N
 read -r Ans3
 
-if [ "${Ans3}" = 1 ]
-then
+if [[ "${Ans3}" = 1 ]]; then
 
-elif [ "${Ans3}" = 2 ]
-then
+elif [[ "${Ans3}" = 2 ]]; then
 echo -e $Y "Lets create a config file using our good friend nano for your device var settings.
 (https://gitlab.com/OrangeFox/vendor/recovery/-/blob/master/orangefox_build_vars.txt) " $N; sleep 2;
 nano ~/OrangeFox-Universal-Compile-Tool/configs/"${code}"_ofconfig
