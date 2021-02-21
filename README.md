@@ -1,18 +1,27 @@
+
 # OrangeFox For your Device
 
-Hello Everyone !!!
-_______________________________________
-Welcome to my OrangeFox Repo
+---
 
-Here you can use my Script to create OrangeFox Recovery for your Device very easily.
+![](https://pbs.twimg.com/media/EYtmbB5XgAQG3Wr.jpg "hover text")
 
-Now you can automate the compile processes, just clone this to ~/OrangeFox-Universal-Compile-Tool/ , add a config file for your device, run this script and as long as everything is good (e.g. The Config File and Device Tree); Compile OrangeFox Recovery 🦊
-_______________________________________
+# Automate the compile processes.
 
-If you have any Doubts regarding this Script, you can ask me on my telegram @p_gghhkm_q https://t.me/p_gghhkm_q
-A special thanks to @Sammy970 https://t.me/Sammy970
-____________________________________
+1. Make sure you know what your doing [OFox Wiki](https://wiki.orangefox.tech/en/dev/building)
+2. Clone this repo to ~/OrangeFox-Universal-Compile-Tool/  
+3. Run this script.
+4. Follow the steps.
+5. Compile OrangeFox Recovery 🦊
+---
+
 Edit BoardConfig.mk
-```
+
+```sh
 TW_INCLUDE_REPACKTOOLS := false
 ```
+
+---
+
+> ### Credits
+-  [@gghhkm](https://t.me/p_gghhkm_q)
+-  @Sammy970 | [Sammy970](https://t.me/Sammy970)
